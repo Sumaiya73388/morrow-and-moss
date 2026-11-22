@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f3">
+    <meta name="description" content="Thoughtful everyday objects for slower, softer living.">
+    <title>Morrow &amp; Moss — Everyday, considered</title>
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#shop">Skip to the collection</a>
+
+    <div class="announcement">
+      <span>Thoughtful things, made for everyday</span>
+      <span class="announcement-detail">Complimentary shipping on orders over $75</span>
+    </div>
+
+    <header class="site-header">
+      <div class="header-main">
+        <a class="wordmark" href="#" aria-label="Morrow and Moss home">
+          <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+            <path d="M18 30V13m0 8C8 21 7 11 7 7c7 0 12 4 11 14Zm0-3c0-8 5-12 11-12 0 7-3 13-11 13" />
+          </svg>
+          <span>Morrow <i>&amp;</i> Moss</span>
+        </a>
+
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>
+          <input id="search-input" type="search" placeholder="Search the little things..." autocomplete="off" aria-label="Search products">
+          <kbd>⌘ K</kbd>
+        </label>
+
+        <button class="cart-trigger" id="cart-trigger" type="button" aria-label="Open shopping bag, 0 items" aria-controls="cart-drawer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          <span class="cart-label">Bag</span>
+          <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </button>
+      </div>
+
+      <nav class="category-nav" aria-label="Shop by category">
+        <div class="category-list" id="category-list">
+          <button class="category-pill is-active" type="button" data-category="All" aria-pressed="true">Everything</button>
+          <button class="category-pill" type="button" data-category="Home" aria-pressed="false">Home &amp; living</button>
+          <button class="category-pill" type="button" data-category="Rituals" aria-pressed="false">Slow rituals</button>
+          <button class="category-pill" type="button" data-category="Accessories" aria-pressed="false">Little extras</button>
+          <button class="category-pill" type="button" data-category="Wearables" aria-pressed="false">Wearables</button>
+        </div>
+        <span class="nav-note"><span class="status-dot"></span> A softer kind of shop</span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE GOOD, GATHERED</p>
+          <h1 id="hero-title">A little more<br><em>room to breathe.</em></h1>
+          <p class="hero-description">Considered objects for the corners, rituals, and in-between moments that make a life yours.</p>
+          <a class="button button-dark hero-cta" href="#shop">Find your everyday <span aria-hidden="true">↗</span></a>
+          <div class="hero-footnote"><span>01 / 04</span><span class="footnote-line"></span><span>Made to be kept</span></div>
+        </div>
+        <div class="hero-art" role="img" aria-label="A sculptural ceramic vase with a branch on a warm, sunlit table">
+          <div class="hero-sun"></div>
+          <div class="hero-frame">
+            <div class="hero-shadow"></div>
+            <div class="hero-vase"><span></span></div>
+            <div class="hero-branch branch-one"></div>
+            <div class="hero-branch branch-two"></div>
+            <div class="hero-leaf leaf-one"></div>
+            <div class="hero-leaf leaf-two"></div>
+            <div class="hero-leaf leaf-three"></div>
+            <div class="hero-leaf leaf-four"></div>
+            <div class="hero-table"></div>
+            <div class="hero-art-label"><span>THE SUNDAY VESSEL</span><span>FORM, MEET FUNCTION&nbsp; ↗</span></div>
+          </div>
+          <div class="hero-side-note">OBJECTS WITH A LITTLE MORE SOUL — MM / 2025</div>
+        </div>
+      </section>
+
+      <section class="collection-section" id="shop" aria-labelledby="collection-title">
+        <div class="collection-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> SMALL THINGS, BIG FEELING</p>
+            <h2 id="collection-title">The considered collection<span class="heading-period">.</span></h2>
+          </div>
+          <p class="collection-intro">Useful, beautiful, and never in a hurry.<br>Meet your new everyday favourites.</p>
+        </div>
+
+        <div class="shop-toolbar">
+          <p id="results-label" aria-live="polite">A few things we think you'll love <span>·</span> <b>08 pieces</b></p>
+          <label class="sort-control">SORT BY
+            <select id="sort-select" aria-label="Sort products">
+              <option value="featured">A little of everything</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="rating">Most loved</option>
+            </select>
+            <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5"/></svg>
+          </label>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span class="empty-icon" aria-hidden="true">⌕</span>
+          <h3>No little things found.</h3>
+          <p>Try another search or take a look at everything.</p>
+          <button class="text-button" id="clear-filters" type="button">Clear filters <span aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <section class="note-banner">
+        <span class="note-sparkle" aria-hidden="true">✳</span>
+        <p>Fewer, better things. <em>Always.</em></p>
+        <span class="banner-caption">A NOTE FROM US, TO YOU</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-wordmark" href="#" aria-label="Morrow and Moss home">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M18 30V13m0 8C8 21 7 11 7 7c7 0 12 4 11 14Zm0-3c0-8 5-12 11-12 0 7-3 13-11 13"/></svg>
+        <span>Morrow <i>&amp;</i> Moss</span>
+      </a>
+      <p>Made for the life you live in.</p>
+      <span class="copyright">© MORROW &amp; MOSS · 2026</span>
+    </footer>
+
+    <div class="overlay" id="overlay" hidden></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+      <div class="drawer-header">
+        <div><p class="eyebrow">YOUR LITTLE FINDS</p><h2 id="cart-title">The good stuff <span id="drawer-count">(0)</span></h2></div>
+        <button class="icon-button close-drawer" id="close-drawer" type="button" aria-label="Close shopping bag">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-empty" id="cart-empty">
+        <span aria-hidden="true">♡</span>
+        <h3>Your bag feels a little light.</h3>
+        <p>There's something lovely out there with your name on it.</p>
+        <button class="button button-dark" id="continue-shopping" type="button">Take a look around</button>
+      </div>
+      <div class="drawer-footer" id="drawer-footer">
+        <div class="shipping-note"><span class="status-dot"></span><span>You're <b id="shipping-remaining">$75.00</b> away from complimentary shipping.</span></div>
+        <div class="subtotal-row"><span>Subtotal</span><b id="cart-subtotal">$0.00</b></div>
+        <p class="tax-note">Taxes and shipping are calculated at checkout.</p>
+        <button class="button button-dark checkout-button" id="checkout-button" type="button">A little checkout <span aria-hidden="true">↗</span></button>
+      </div>
+    </aside>
+
+    <section class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true">
+      <button class="icon-button modal-close" id="close-modal" type="button" aria-label="Close checkout">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="modal-sparkle" aria-hidden="true">✳</div>
+      <p class="eyebrow">A MOMENT, PLEASE</p>
+      <h2 id="checkout-title">Ready for a little more lovely?</h2>
+      <p class="modal-copy" id="modal-copy">Your considered collection is ready to find a home.</p>
+      <div class="modal-total"><span>Your total</span><b id="modal-total">$0.00</b></div>
+      <button class="button button-dark modal-confirm" id="confirm-checkout" type="button">Place your pretend order <span aria-hidden="true">↗</span></button>
+      <p class="demo-note">Just for the joy of browsing — checkout is a demo.</p>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
